@@ -1,26 +1,54 @@
-.chat_item .info{
+.chat_item .info {
     display: none;
 }
-.chat_item .ext{
+
+.chat_item .ext {
     display: none;
 }
-.login{
+
+.login {
     min-width: 0;
-    min-height:0;
+    min-height: 0;
 }
-.main_inner{
+
+.main_inner {
     min-width: 0;
-    min-height:0;
+    min-height: 0;
 }
-.panel{
+
+.panel {
     width: 80px;
 }
-.panel .tab{
-    display:none;
+
+.panel .tab {
+    display: none;
 }
-.panel .search_bar{
-    display:none
+
+.panel .search_bar {
+    display: none
 }
-.panel .info .nickname{
-    display:none;
+
+.panel .info .nickname {
+    display: none;
+}
+
+.login .lang,
+.login .copyright {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+#editArea {
+    display: inline-block;
+    width: 70%;
+    height: 1.8em;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    background: white;
+    border: 1px solid #c1c1c1;
 }

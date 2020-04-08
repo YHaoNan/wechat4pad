@@ -29,8 +29,8 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
         webViewClient = object : WebViewClient() {
 
             override fun onPageFinished(view: WebView?, url: String?) {
-                injectCSS(view)
                 injectJS(view)
+                injectCSS(view)
                 super.onPageFinished(view, url)
             }
 
@@ -74,7 +74,6 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
         if (view!=null){
             for(css in cssToInject){
                 view.loadUrl("javascript:$(document.head).append('<style>${css}</style>'    )")
-                Log.i("WXWebView","Injected CSS ${css}")
 //                view.loadUrl("javascript:console.log(document.head.innerHTML.substring(document.head.innerHTML.length - 60,document.head.innerHTML.length))")
             }
         }
