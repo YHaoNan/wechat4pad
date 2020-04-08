@@ -1,0 +1,26 @@
+.chat_item .info{
+    display: none;
+}
+.chat_item .ext{
+    display: none;
+}
+.login{
+    min-width: 0;
+    min-height:0;
+}
+.main_inner{
+    min-width: 0;
+    min-height:0;
+}
+.panel{
+    width: 80px;
+}
+.panel .tab{
+    display:none;
+}
+.panel .search_bar{
+    display:none
+}
+.panel .info .nickname{
+    display:none;
+}
