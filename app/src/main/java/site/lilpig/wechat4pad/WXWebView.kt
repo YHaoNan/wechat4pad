@@ -7,30 +7,23 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.ViewGroup
 import android.webkit.*
+import site.lilpig.wechat4pad.plugin.AssetsPluginFactory
+import site.lilpig.wechat4pad.plugin.Plugin
+import site.lilpig.wechat4pad.plugin.PluginFactory
 import site.lilpig.wechat4pad.utils.FileUtils
 
 class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attrs) {
 
-    private val cssToInject: MutableList<String>
-    private val jsToInject: MutableList<String>
-    inner class WebViewJavaScriptInterface{
-        @JavascriptInterface
-        fun injectCSS(html: String){
-            refreshWebViewContent()
-        }
-    }
+    private val pluginList: MutableList<Plugin> = ArrayList()
 
     init {
         Log.i("WXWebView","Start init...")
 
-        cssToInject = ArrayList()
-        jsToInject = ArrayList()
+        initBuiltInPlugin()
 
         webViewClient = object : WebViewClient() {
-
             override fun onPageFinished(view: WebView?, url: String?) {
-                injectJS(view)
-                injectCSS(view)
+                callEachPlugin()
                 super.onPageFinished(view, url)
             }
 
@@ -38,7 +31,6 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
                 view: WebView?,
                 request: WebResourceRequest?
             ): Boolean {
-                Log.i("WXWebView","LoadURL ${request?.url.toString()}")
                 loadUrl(request?.url.toString())
                 return true
             }
@@ -54,45 +46,22 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
         }
 
         setWebSettings()
-        addJavascriptInterface(WebViewJavaScriptInterface(),"_env_")
         requestFocusFromTouch()
 
         Log.i("WXWebView","End init...")
     }
-    private fun refreshWebViewContent() {
 
+    private fun initBuiltInPlugin() {
+        pluginList.add(AssetsPluginFactory(context).createPlugin("jquery_support"))
+        pluginList.add(AssetsPluginFactory(context).createPlugin("baseui"))
     }
 
-    private fun injectJS(view: WebView?) {
-        if (view != null)
-            for (js in jsToInject){
-                view.loadUrl("javascript:${js}")
-            }
-    }
-
-    private fun injectCSS(view: WebView?) {
-        if (view!=null){
-            for(css in cssToInject){
-                view.loadUrl("javascript:$(document.head).append('<style>${css}</style>'    )")
-//                view.loadUrl("javascript:console.log(document.head.innerHTML.substring(document.head.innerHTML.length - 60,document.head.innerHTML.length))")
-            }
+    private fun callEachPlugin() {
+        for (plugin in pluginList){
+            plugin.injectFiles(this)
         }
     }
 
-    /**
-     * Add a css path to inject list
-     * Every CSS in list will inject when app startup or app reloaded
-     */
-    fun addCSSToInjectList(cssPath: String){
-        val cssContent = FileUtils.getFromAssets(context,"builtin_css/${cssPath}",false)
-        cssToInject.add(cssContent)
-
-    }
-
-    fun addJSToInjectList(jsPath: String){
-        val jsContent = FileUtils.getFromAssets(context,"builtin_js/${jsPath}", true)
-        jsToInject.add(jsContent)
-    }
 
     private fun setWebSettings() {
         settings.userAgentString = WXWebViewContacts.UA
@@ -111,7 +80,7 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
 
     fun destoryWebView(){
         loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
-        clearHistory();
+        clearHistory()
         (parent as ViewGroup).removeView(this)
         destroy()
     }

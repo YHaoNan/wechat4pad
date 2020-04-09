@@ -1,0 +1,8 @@
+{
+  "name": "JQuery",
+  "desc": "JQuery Support",
+  "author": "LILPIG",
+  "icon": "",
+  "settings": [],
+  "inject": ["jquery.js"]
+}
