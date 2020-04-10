@@ -5,11 +5,13 @@
   "icon": "",
   "settings": [
     {
+      "id": "wx4pad.baseui.sendmsgbyenter",
       "name": "回车发送",
       "desc": "启用后界面上的发送按钮变成换行键",
       "type": "bool",
       "default": false
     },{
+      "id": "wx4pad.baseui.nightmode",
       "name": "夜间模式",
       "desc": "界面将变成适合夜间使用的暗色系",
       "type": "bool",

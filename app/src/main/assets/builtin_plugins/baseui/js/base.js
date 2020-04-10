@@ -1,4 +1,10 @@
+__env__.getBoolSetting = function(id){return JSON.parse(__env__.getSetting(id)).bool}
+__env__.getIntSetting = function(id){return JSON.parse(__env__.getSetting(id)).int}
+__env__.getFloatSetting = function(id){return JSON.parse(__env__.getSetting(id)).float}
+__env__.getStringSetting = function(id){return JSON.parse(__env__.getSetting(id)).string}
+
 (function(){
+    console.log("回车发送　"+__env__.getBoolSetting("wx4pad.baseui.sendmsgbyenter"))
     $(document.head).append('<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />');
     $(".login .lang,.login .copyright").wrapAll("<div class='lang-and-copyright' style='position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);text-align: center;text-shadow: 0 0 black;'></div>");
     $(".login_box .qrcode .sub_desc").text("WeChat4PAD基于微信网页版");

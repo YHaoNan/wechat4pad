@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <site.lilpig.wechat4pad.WXWebView
+    <site.lilpig.wechat4pad.wxwebview.WXWebView
         android:id="@+id/am_wx_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

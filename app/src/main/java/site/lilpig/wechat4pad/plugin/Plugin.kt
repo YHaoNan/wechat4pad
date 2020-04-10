@@ -1,7 +1,7 @@
 package site.lilpig.wechat4pad.plugin
 
 import android.util.Log
-import site.lilpig.wechat4pad.WXWebView
+import site.lilpig.wechat4pad.wxwebview.WXWebView
 
 class Plugin(val name: String,val author: String) {
     var desc: String? = null
@@ -12,11 +12,10 @@ class Plugin(val name: String,val author: String) {
     fun injectFiles(webView: WXWebView){
         for (inject in injectList){
             if(inject.get("type") == "css"){
-                webView.loadUrl("javascript:$(document.head).append('<style>${inject.get("content")}</style>')")
+                webView.loadUrl("javascript:$(document.head).append('<style>${inject.get("content")}</style>')",null)
             }else if (inject.get("type") == "js"){
-                webView.loadUrl("javascript:${inject.get("content")}")
+                webView.evaluateJavascript("javascript:${inject.get("content")}",null)
             }
-            Log.i("Plugin",inject.get("content"))
 
         }
     }

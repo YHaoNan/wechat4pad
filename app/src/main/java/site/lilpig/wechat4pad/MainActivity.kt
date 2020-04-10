@@ -11,4 +11,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         am_wx_view.loadUrl("https://wx.qq.com")
     }
+
+    override fun onDestroy() {
+        am_wx_view.destoryWebView()
+        super.onDestroy()
+    }
 }
