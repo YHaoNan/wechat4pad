@@ -18,5 +18,5 @@
       "default": false
     }
   ],
-  "inject": ["js/base.js","css/base.css"]
+  "inject": ["js/base.js","js/top_drawer.js","js/input_method.js","css/base.css"]
 }

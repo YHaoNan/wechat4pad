@@ -3,10 +3,26 @@ package site.lilpig.wechat4pad.wxwebview
 import android.content.Context
 import android.util.Log
 import android.webkit.JavascriptInterface
+import android.widget.Toast
 import org.json.JSONObject
 import site.lilpig.wechat4pad.plugin.PluginSettingPool
 
 class WXWebViewJavaScriptInterface(val wxWebView: WXWebView,val pluginSettingPool: PluginSettingPool){
+
+    @JavascriptInterface
+    fun getPluginList(): String{
+        return ""
+    }
+
+    @JavascriptInterface
+    fun toast(msg: String){
+        Toast.makeText(wxWebView.context,msg,Toast.LENGTH_SHORT).show()
+    }
+    @JavascriptInterface
+    fun longToast(msg: String){
+        Toast.makeText(wxWebView.context,msg,Toast.LENGTH_LONG).show()
+    }
+
     @JavascriptInterface
     fun getSetting(settingId: String): String{
         val pluginSetting = pluginSettingPool.getPluginSetting(settingId)

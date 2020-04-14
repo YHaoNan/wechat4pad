@@ -15,4 +15,8 @@ __env__.getStringSetting = function(id){return JSON.parse(__env__.getSetting(id)
     var sendBtn = $(".box_ft .btn_send");
     $(".box_ft .content").append(sendBtn).css('display','flex').css('align-items','center');
     $(".box_ft .action").remove();
+
+    $(".js_fileupload").click(function(){
+        __env__.toast("暂不支持此功能")
+    });
 }())
