@@ -13,6 +13,7 @@ abstract class PluginFactory(val settingPool: PluginSettingPool){
         val plugin = Plugin(configJson.getString("name"), configJson.getString("author"))
         plugin.desc = configJson.getString("desc")
         plugin.icon = configJson.getString("icon")
+        plugin.showupInPluginList = configJson.getBoolean("showup_in_plugin_list")
         val settings = configJson.getJSONArray("settings")
         for (i in 0..settings.length()-1){
             val setting = settings.getJSONObject(i)

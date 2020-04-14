@@ -54,33 +54,3 @@
 }
 
 
-.box_hd .title_wrap{
-    z-index: 0;
-}
-#wx4pad_top_drawer{
-    width: 100%;
-    position: absolute;
-    top: 0
-}
-
-#wx4pad_top_drawer_container{
-    height: 200px;
-    background-color: #eee;
-    box-shadow: 2px 2px 6px rgba(150, 150, 150, 0.5);
-}
-
-#wx4pad_top_drawer_toggle{
-    margin-left: 80%;
-    width: 40px;
-    background-color: #eee;
-    text-align: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 2px 2px 6px rgba(150, 150, 150, 0.5);
-}
-
-#wx4pad_top_drawer_toggle img{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-}

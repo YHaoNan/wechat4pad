@@ -6,6 +6,7 @@ import site.lilpig.wechat4pad.wxwebview.WXWebView
 class Plugin(val name: String,val author: String) {
     var desc: String? = null
     var icon: String? = null
+    var showupInPluginList: Boolean? = null
     var settings: MutableList<PluginSetting> = ArrayList()
     var injectList: MutableList<Map<String,String>> = ArrayList()
 

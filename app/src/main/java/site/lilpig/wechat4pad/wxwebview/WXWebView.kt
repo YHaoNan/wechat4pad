@@ -11,8 +11,8 @@ import site.lilpig.wechat4pad.plugin.PluginSettingPool
 
 class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attrs) {
 
-    private val pluginList: MutableList<Plugin> = ArrayList()
-    private val pluginSettingPool = PluginSettingPool()
+    val pluginList: MutableList<Plugin> = ArrayList()
+    val pluginSettingPool = PluginSettingPool()
 
     init {
         Log.i("WXWebView","Start init...")
@@ -29,9 +29,14 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
                 view: WebView?,
                 request: WebResourceRequest?
             ): Boolean {
-                loadUrl(request?.url.toString())
-                return true
+                val url = request?.url.toString()
+                if(url == "https://wx.qq.com" || url.startsWith("javascript:")){
+                    loadUrl(request?.url.toString())
+                    return true
+                }
+                return false
             }
+
         }
 
         webChromeClient = object : WebChromeClient() {
@@ -52,6 +57,7 @@ class WXWebView(context: Context?, attrs: AttributeSet?) : WebView(context, attr
 
     private fun initBuiltInPlugin() {
         pluginList.add(AssetsPluginFactory(context,pluginSettingPool).createPlugin("jquery_support"))
+        pluginList.add(AssetsPluginFactory(context,pluginSettingPool).createPlugin("api_support"))
         pluginList.add(AssetsPluginFactory(context,pluginSettingPool).createPlugin("baseui"))
     }
 

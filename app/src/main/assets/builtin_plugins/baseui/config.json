@@ -1,22 +1,21 @@
 {
-  "name": "BaseUI",
-  "desc": "Provide a basic UI and some UI API",
-  "author": "LILPIG",
-  "icon": "",
-  "settings": [
-    {
-      "id": "wx4pad.baseui.sendmsgbyenter",
-      "name": "回车发送",
-      "desc": "启用后界面上的发送按钮变成换行键",
-      "type": "bool",
-      "default": false
-    },{
-      "id": "wx4pad.baseui.nightmode",
-      "name": "夜间模式",
-      "desc": "界面将变成适合夜间使用的暗色系",
-      "type": "bool",
-      "default": false
-    }
-  ],
-  "inject": ["js/base.js","js/top_drawer.js","js/input_method.js","css/base.css"]
+    "name": "BaseUI",
+    "desc": "Provide a basic UI and some UI API",
+    "author": "LILPIG",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAO/UlEQVR4Xu1dfZRcZXn/PXc2QYKKpcdEq0WlnioqH5rMnUSlhZ4CcXfubDA7dzYR0XgQigpHNrW24hE5FrTVmUjpibHQgoaPnbtbwu6dDTSApIKQubNrSnqg9hSthh4hja1YA2ySnffpufuRpmFm5773a+7MvXPO/rXP5+/93fc+78d9X0JMfiuNB09VcHgjmN9NhDcBeOvcHxMD+wm0H8B+EP/wv5/r2f7MNb2H4wANdXuSa4yJswTERgY2AjjdYb4vA/gWgXdU9dxjDnU6UqxrCbDGMN9UB4Yw9+f+R2QI5uKkrlnujURXsysJkC6b1ygKhpjxFp+gr4NR7FmytPj4hy/+T59sRsJMVxFALZvrQLNP/HkBoftjBhVrevZbAdkP3WxXEGDV6Nh7U5waYuZLQ0LwYUFcnMzn7g/JX2BuOpoAa4wHTqvzkc0gsp/6VwWGUlPD/LeKUIp7BrP/Er5vfzx2LAEyRuUKBtsN/w5/oHBt5QUmFHv45eITum6PHjrq13EEUEcrF7MQmwl0YcSQ/idmKtYK2TsjFtei4XQMAVYPV84UxEMgXB5xgO8jcLFT5g8iT4CVprlMmcYQMW8G6HURb/xj4THzN5WenmJ1fe9/RDnmSBNAHTYvgzI7rDsnyiA2rxH5WSZ72KjdHNX4I0mAtDH++wpoiIFcVIGTjOtRIi5W87kxSb3AxSNFgNU77n+rODqzGcBnAs+8PQ62Q6BoDWpPtsf9K71GgwDXX69k3rVyiBVlCMxvjAo4AcXxkt0bzPDJxSn9wl8F5MOx2bYTQB2p5MHCLvAyjqPuCkF+mlgpVgvZv2tnOm0jwOrR+zKCe+wnXm8nAG33zdgJ4qKl577XjlhCJ0DamHgDQdgNb0/hKu1IOoo+iXlrPaUUJweyPwkzvlAJoBqmXdzZw7q3hZlkx/hiHAChaD01WcQNN4gw4g6FAOmyqc2vz58fRlKd74OrIKVo5bMjQecSKAHUYfOc2fV5wmVBJ9KN9gkoC8HF2mCuFlR+gRDg3B07XnfSjL0+rwwBfEpQwcfE7oxdJB7lnuJevfeg3zn7TgB1ePxyKLPr82f6HWy87fEzYCpaBW2bnzj4RoCMMXYhI2U/8Wv9DDCx9f8RIMZDgkSxpvc/4Ac2ngmg3jvxuzxTt9fnr/AjoMSGQwQYt9VTKE4NaD9yqNFQzDUBzr/99le9tOz1Q7DX6IHf9BJEousSAcYv7fpg2YuvKe7edMG0GyuuCJAZHr+IFXwNoPe6cZro+I0A7wWlvmTl+yqylqUJoI6MXw6mW2UdJfIhIEB8k5XPXSfjSYoAarnyBRDfKOMgkQ0dgfssXbvEqVfHBEiXJ36PSPyjU8OJXBsRILrJymcd9QSOCLBqtHKGIvjHbUwpcS2JAJGyrprva7kDqSUB3r5z50m/cUiYBI7aNmxJSGInfgR18QFrQ//kYpm3JEBmxPwzZtwUO/i6IGEiureaz653TYC8YaR+Ric/Cca7uwCPWKZAgtdUB3N7miW/aA+glisfA/EdsUSue5L+a0vXrnZFgLRR2ZW8+zueCS/w0qVn19Zd/GyjTJr2AKvuqpyhLPGn8ifgEECjgnkvC+yjHnoXCT4LxO8H6OxIQUzYxaB9YPEUQTkIFucw0fsIWPRd6jaHMLAhIF/VtVEpAmSGx/tZofvcJnac3uOE1Cereu/TjWyphvldAB/1wY93EyxusAr9X24Y5+zuZb4FwArvjo5ZCAUbZv5crZD7hhQB0mXzi0T4ipdkCXRHVc9uamUjM1wZZIXvaSUX5P97epaucHL8i2qYzwF4g9dYQsWG6RarkL1GigBqebwMIg9btumn09NL3rPvsotfdAKWWja/066tYwx81un3e+pI5Twwf99JTs1lwsaGxiw9u06KAOkR8xFieNnE+SeWrn3dKVDpkcr7ifkHTuX9kmPgYE3XlsvYUw1zB4CGgDq0Eyo2TNhdy2sXhEsAprVWIfsPDgGBPeN42q/rvwZhiVMdP+QWA6eZfXVk/EYwfcG1/5CxaQsB6Ejq1Oqlvf8jA1LaMKcIeJ+MjmdZ5i1WISd1luAqo5JTwC3n2ZvFFjY2bSGApWstp5lPBMiH1448Hxap/JsZW3WPeb6SwiPyzuY0wsYmIcBiLZUQoDE6Xp/GsFnu9mlEQoCEAM0mf5JXgIdhYNIDNO+TwsYmqQGSGiD8eYCwWZ7UAM0RSHqApAdIeoCmHEhGAckoIBkFNOBAMg/Q/L2RzAQ6qLiSIjAZBiZrAU04EPbDkYwCklFAMgpIRgEhbwgJu5tzUJY0FkmGgckwMBkGJsPAhlvBk9XAZDWwIQeSeQAHL9ykBkjmAZJ5gDjPA0xPL321049CFnBSy+YECL0OOhg/RaT26NuOVaPSB7D0iVwLQYfdO7ZlIgjgMyw99+8yLZUxKrcz+OMyOl5lGbyppuekPoHPjJibmOH6po9YEEBRlNV7BvqqMg2kGuZfAvicjI5XWVLQVx3QdsrYUcuVz4P4azI6x8vGggACon9S7x+XAUktT2wAibtldLzKUir127KXO6qGWZy/+MKV+1gQAMSftPK522QQyvz9zjdzvd7wIAMZOxKyU5aurZKQnxVVy+adIHxEVi9eNQDTdVYhK324lGqYjwNY4xZcKT0Xn4XZ9tPG+C4vl1fHpAfAw1Ze+0OpBgGQGakMModyVsAvBHo+OKl/6F9lYpw9OAsnHwaQktGLXQ1gJ8xQ3ljT+56XBSpdNu8hwqCsnpQ84/NWQbOLTqmfHyenxKMHsGF1UQfMdbET5xKE/fFlILeFu/kkfIElfgxVY0MABsZrutYv9YjNC3sday/msw5+y5Se2y8bV+bOna/lJfVnQXitrG4sXwF20vUlqbdPXdLr6pxhtTz2ZZByvRewT9Ql8HlVPfeYG5uqYW4EcJcb3dgSgIi/Us3nvuQWNHvlLZXCXQz8llsb83o764ePXD710fX2IU+ufn5NVcfmFTCLMuG/6vWZzNTgJa56AdvEquHKe0gRV7u5l4iAnzOLW+svPH/j1JVXHnXV8vbYf+6YOMOtfmx7gPnES5aubfYKXsaorBQsPgGiPAGvX9Qe4SkIMVrvOenbU+vXun7qF3x4/U4i7gSYTkFRn9D7/tkrCRb07SeSAZWYV4CwAoyXiHCQwQfFDD04uUHb7ZevtDH+cQLd7pe9eL0CFlAjbLPy2lV+gRimHdUwLXt06pfPeBJgth6gP7Xy2b/wC8gw7KRHxrcT06V++oovAezZQcGfrg3mtvoJaFC21HJlG4iv9Nt+rAlgg8mC1SBvxPajwVRj/DqA/twPWyfaiD0BbEDcgBBEYzSymRkZv4iZHJ9yKhuXm9y9jELatCWsNSxCod+ZHMj+pLVkeBKrjUpOeDgF1EmkCQGOQ0kwXThZyD7kBLigZdJG5SoCB16fHMLLr3la1w/J5ONlJBLZHuD/Roh0ZVXP/o0MIH7LpkfGv05Mf+y33Ub2mOgDtXzW3vji+KcalUMAn+JY4TjByBNgNlbCthQrW/2cLHICVtoYW0tQPgVAcyLvi4yCq6wBbZtTW5nR+89mMfOkU/kT5VwRQDVMe0NneKDMRW1fgb61Lma2elk7cAKUffEDgz9FHPDGkwbBMPDDmq6tdBKnLeP9Mg1+wNJzH2rkr+nXO0EsxTpN2F5Amn0XE22vDmj/5ljPgeDq0YmMqIsrQPiEA/EARZo3yvFOVcP8DAD7riLXP2beWivkPi1FgEx5fD0TNbxpynUkLhQJ9BCDd3G9PlzbsM7VjmF7EQngAQFcFPp9BIvkTMDNVV37bDMRH1cgm3791LQHWH1v5Uwxww1v+nLRjv6oEB6F4AdAOAAoz0OhA3z06IEXU0cOnHZ02SnTS+rLFUotJyGWC1KWE9dXECkFBt7pTwCBWHmYie4l5r2Wrj0xS1bGOQL8QSK0vHDLUUTMG61CruGlXIvfHGqYewGc68hJIhRdBOoi3ewS6UUJkB41ryGBm6ObWRKZAwS2W7p2WTO5RQkwuwlyad3uBc5w4CgRiSAClKI/qK7PNr3epuU3/OkR84vE3i6QjCAuMQmJxyw9t+j1di0JsNJ48NQeHH6UwWfFBLWuSbPV028n2pIAtpA6MpEFC7NrkIlBIkz4ai2vtbzb0BEBZknQhm/3Y9BOwaRINGnls462sDkmgB1pxjB3MtBwSjGYTBKrLhA4YOma48utpQgw9zqoXA3mv3IRWKISMAJM9I1aPit1woo0AWZJUB77GEiROlcn4NwT86T8kZXv+7YsEK4IMF8TrAHztfZHGrJOE3lfEbDXa+wPb55wY9U1ARaczS9YXBvaqR5usuxGHaIqM2+p6VrZS3qeCXCMCKMT10II+xbuN3sJKNFthQA9R4zSWr2vdAORaCXd6v++EWB2lGAf8jQzMwQiu0dIfn4jwHyLIuqlPRsu+alfpn0lwLHewDCT+sCvFpq1w2PMXKoV+r/vq1mnM4FunSb1gVvk5vTsrWMglGp5zfOhFM0iCaQHONGZmtQHskz4BRFKp52SKt3f22ufSBbYLxQCJPWBRPsxtlEKJb/3Qra1BzjeuZrUB03agiYApWTpvd+ToItn0dB6gFe8FuaOXIn9/AGD7UMzSrInlntu+XkDbSPAsRFDbOsD/hUBpZMxXdot+ZmYX41v22k7AWJZHxBuI65vqerr2r7rOhIEiNH8wS4wlaxCNrBPz2V7h0gR4BgRuqw+YOBHYJRqBe1W2QYKWj6SBOii+uBFIiotOYItj30k+8ugG9ON/UgToKPrA8J3iESpOtC/z03DhKUTeQJ0Xn3Aj9jTt1Y+5/pWsbAaPzKjAJmEI7y+8AwL3tIpJ6AtYN4xPcArJpKiM39wxB7PL0Wq9Kjee1CGzFGQ7VgCRKQ+uJtApaqenYpCY7qJoaMJ0Mb6wL5vwN6Ht8MN6FHS6QoChDh/8DNWUKoNaF2zLb6rCBDg/AETc6lHcOkHG/p/HqUn2GssXUkAX+sD5hF7E2Z1MLfHK9hR1O9aAiyAvcaYOEtAbGTAvu/ndGeNQNMg3M3gu2t57WFnOp0p1fUEWGgW+zN3BYc30txn7qcz+HSaJwQD+wlk3yK2H4x9y1569R27N11gH1nX9b//BcFKSPmYh2yRAAAAAElFTkSuQmCC",
+    "showup_in_plugin_list": true,
+    "settings": [{
+        "id": "wx4pad.baseui.sendmsgbyenter",
+        "name": "回车发送",
+        "desc": "启用后界面上的发送按钮变成换行键",
+        "type": "bool",
+        "default": true
+    }, {
+        "id": "wx4pad.baseui.nightmode",
+        "name": "夜间模式",
+        "desc": "界面将变成适合夜间使用的暗色系",
+        "type": "bool",
+        "default": false
+    }],
+    "inject": ["js/base.js", "js/top_drawer.js", "js/plugin_list.js", "js/input_method.js", "js/enter_send.js", "css/base.css", "css/drawer.css", "css/plugin_list.css"]
 }

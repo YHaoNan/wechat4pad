@@ -1,0 +1,26 @@
+#wx4pad_plugin_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wx4pad_plugin_item {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.wx4pad_plugin_item_icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+}
+
+.wx4pad_plugin_item_name {
+    font-size: 0.8em;
+    font-weight: bold;
+}

@@ -4,15 +4,33 @@ import android.content.Context
 import android.util.Log
 import android.webkit.JavascriptInterface
 import android.widget.Toast
+import org.json.JSONArray
 import org.json.JSONObject
 import site.lilpig.wechat4pad.plugin.PluginSettingPool
 
 class WXWebViewJavaScriptInterface(val wxWebView: WXWebView,val pluginSettingPool: PluginSettingPool){
 
     @JavascriptInterface
-    fun getPluginList(): String{
-        return ""
+    fun getPluginListJI(): String{
+        val plugins = wxWebView.pluginList
+        val pluginsArrayToReturn = JSONArray()
+        for (p in plugins){
+            val pluginJO = JSONObject()
+            pluginJO.put("name",p.name)
+            pluginJO.put("author",p.author)
+            pluginJO.put("icon",p.icon)
+            pluginJO.put("showup_in_plugin_list",p.showupInPluginList)
+            pluginJO.put("desc",p.desc)
+            pluginsArrayToReturn.put(pluginJO)
+        }
+        return pluginsArrayToReturn.toString()
     }
+
+    @JavascriptInterface
+    fun openPluginUI(indexInList: Int){
+        toast("尚未实现 ${indexInList}")
+    }
+
 
     @JavascriptInterface
     fun toast(msg: String){
@@ -24,7 +42,7 @@ class WXWebViewJavaScriptInterface(val wxWebView: WXWebView,val pluginSettingPoo
     }
 
     @JavascriptInterface
-    fun getSetting(settingId: String): String{
+    fun getSettingJI(settingId: String): String{
         val pluginSetting = pluginSettingPool.getPluginSetting(settingId)
         if (pluginSetting==null)return ""
         val sharedpreferences = wxWebView.context.getSharedPreferences(WXWebViewContacts.SETTINGS_PREF_NAME, Context.MODE_PRIVATE)
@@ -54,7 +72,7 @@ class WXWebViewJavaScriptInterface(val wxWebView: WXWebView,val pluginSettingPoo
         return result.toString()
     }
 
-    @JavascriptInterface fun setSetting(settingId: String, value: Any){
+    @JavascriptInterface fun setSettingJI(settingId: String, value: Any){
         val pluginSetting = pluginSettingPool.getPluginSetting(settingId)
         if(pluginSetting==null) return
         val sharedpreferencesEditor = wxWebView.context.getSharedPreferences(WXWebViewContacts.SETTINGS_PREF_NAME,Context.MODE_PRIVATE).edit()

@@ -13,13 +13,23 @@
     drawer_panel.append(drawer_panel_toggle);
     $(document.body).append(drawer_panel);
 
+    __env__.addToDrawer = function(item_title,node){
+        console.log(item_title,node);
+        var title = $("<div class='wx4pad_top_drawer_item_title'></div>");
+        title.text(item_title);
+        var item = $("<div class='wx4pad_top_drawer_item'></div>");
+        item.append(node);
+        drawer_panel_container.append(title);
+        drawer_panel_container.append(item);
+    }
 
     $("#wx4pad_top_drawer_container").slideUp("fast");
     var is_container_show_up = false;
     $("#wx4pad_top_drawer_toggle").click(function(){
         is_container_show_up = !is_container_show_up;
         $("#wx4pad_top_drawer_container").slideToggle("fast");
-        if(is_container_show_up)
-            __env__.toast("别tm点了...这现在啥也没有");
-    })
+    });
+
+
+
 }())
